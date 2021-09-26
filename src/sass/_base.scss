@@ -1,0 +1,104 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  background-color: #0e0e0e;
+  width: 100vw;
+  height: 100vh;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 18px;
+    line-height: 1.22;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+body.menu-modal-open {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+//
+
+// container
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+
+  // контейнер для мобілки
+  @media screen and (min-width: 320px) {
+    width: 320px;
+    padding: 0 20px;
+  }
+
+  // контейнер для планшета
+  @media screen and (min-width: 768px) {
+    width: 610px;
+    padding: 0 20px;
+  }
+
+  // контейнер для компютера
+  @media screen and (min-width: 1280px) {
+    width: 946px;
+    padding: 0 20px;
+  }
+}
+
+// ===PNotify===
+.pnotify-container {
+  position: relative;
+  margin-left: 44px !important;
+  margin-right: 0px !important;
+}

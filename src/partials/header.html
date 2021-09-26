@@ -1,0 +1,37 @@
+<header>
+  <div class="header">
+    <a class="logo animate__animated animate__rotateIn" id="logo" href="#">
+      <svg class="logo__icon">
+        <use href="./images/sprite.svg#icon-logoevent"></use>
+      </svg>
+    </a>
+    <div class="logo-gradient"></div>
+
+    <h1 class="header-title animate__animated animate__bounceInDown">
+      FIND BEST EVENTS AROUND THE WORLD
+    </h1>
+    <div class="loockfor">
+      <form class="search-form" id="search-form">
+        <input
+          class="input-search"
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Start searching"
+        />
+        <button class="search-button" type="submit">
+          <svg class="input-icon" width="12" height="12">
+            <use href="./images/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+      <div class="choose-form">
+        <select class="input-country grey-polygon" name="country" id="select-country">
+          <option class="country-option selected" value="" disabled selected hidden>
+            Choose country
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</header>

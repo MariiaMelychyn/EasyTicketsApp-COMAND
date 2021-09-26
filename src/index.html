@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyTicketsApp</title>
+
+    <link type="image/png" sizes="16x16" rel="icon" href="./images/favicon/favicon/favicon.ico" />
+    <link type="image/png" sizes="32x32" rel="icon" href="./images/favicon/favicon/favicon.ico" />
+    <link type="image/png" sizes="48x48" rel="icon" href="./images/favicon/favicon/favicon.ico" />
+    <link rel="icon" href="./images/favicon/favicon/favicon-32x32.png" type="image/x-icon" />
+    <meta name="description" content="Find best events around the world!" />
+    <link href="../node_modules/@pnotify/core/dist/PNotify.css" rel="stylesheet" type="text/css" />
+    <link
+      href="../node_modules/@pnotify/mobile/dist/PNotifyMobile.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
+    <div class="main-bg">
+      <include src="./partials/header.html"></include>
+      <div class="down-bg">
+        <include src="./partials/gallery.html"></include>
+        <include src="./partials/modal.html"></include>
+        <include src="./partials/footer.html"></include>
+        <include src="./partials/scroll.html"></include>
+        <include src="./partials/preloader.html"></include>
+      </div>
+    </div>
+    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
+
+    <script src="./index.js"></script>
+  </body>
+</html>

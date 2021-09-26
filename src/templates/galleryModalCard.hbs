@@ -1,0 +1,128 @@
+<button class="modal__close-button" type='button'>
+	<svg class="modal__icon-close" id="modal__icon-close" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path id="modal__icon-path1" d="M0.874187 17C0.65025 17 0.426313 16.9148 0.256172 16.7434C-0.0853907 16.4019 -0.0853907 15.8481 0.256172 15.5066L15.5069 0.256166C15.8485 -0.0853885 16.4023 -0.0853885 16.7438 0.256166C17.0854 0.59772 17.0854 1.15146 16.7438 1.49323L1.49327 16.7434C1.32185 16.9138 1.09791 17 0.874187 17Z" />
+		<path id="modal__icon-path2" d="M16.126 17C15.9021 17 15.6784 16.9148 15.508 16.7434L0.256172 1.49323C-0.0853907 1.15146 -0.0853907 0.59772 0.256172 0.256166C0.597735 -0.0853885 1.15149 -0.0853885 1.49327 0.256166L16.7438 15.5066C17.0854 15.8481 17.0854 16.4019 16.7438 16.7434C16.5724 16.9138 16.3487 17 16.126 17Z" />
+	</svg>
+</button>
+<div class="modal__image-small">
+	<picture>
+		<source srcset='{{images.1.url}}, {{images.6.url}}' media='(min-width: 1280px)' />
+		<source srcset='{{images.4.url}}, {{images.3.url}}' media='(min-width: 768px)' />
+		<source srcset='{{images.8.url}}, {{images.7.url}}' media='(max-width: 767.9px)' />
+		<img class='modal__preview-img' src='{{images.1.url}}' width='132' alt='{{name}}' />
+	</picture>
+</div>
+<div class='modal__data'>
+
+	<div class="modal__image-big">
+		<picture class='modal__image'>
+			<source srcset='{{images.1.url}}, {{images.6.url}}' media='(min-width: 1280px)' />
+			<source srcset='{{images.8.url}}, {{images.3.url}}' media='(min-width: 768px)' />
+			<source srcset='{{images.8.url}}, {{images.7.url}}' media='(max-width: 767.9px)' />
+			<img src='{{images.7.url}}' width='360' alt='{{name}}' />
+		</picture>
+	</div>
+
+	<div class='modal__info'>
+		<ul class='modal__info-list'>
+			<li class='modal__info-list-item'>
+				<h2 class='modal__title'>INFO</h2>
+				{{#if info}}
+				<p class='modal__text'>{{info}}</p>
+				{{else}}
+				<p class='modal__text'>No additional information</p>
+				{{/if}}
+			</li>
+			<li class='modal__info-list-item'>
+				<h2 class='modal__title'>WHEN</h2>
+				<p class='modal__text'>{{dates.start.localDate}}</p>
+				<p class='modal__text'>{{dates.start.localTime}} ({{dates.timezone}})</p>
+			</li>
+			<li class='modal__info-list-item'>
+				{{#if _embedded.venues}}
+				<h2 class='modal__title'>WHERE</h2>
+				<p class='modal__text'>{{_embedded.venues.0.city.name}},
+					{{_embedded.venues.0.country.name}}</p>
+				<p class='modal__text'>{{_embedded.venues.0.address.line1}}</p>
+				{{/if}}
+			</li>
+			<li class='modal__info-list-item'>
+				<h2 class='modal__title'>WHO</h2>
+				{{#if _embedded.attractions}}
+				 <p class='modal__text author-name'>{{name}}</p>
+				{{else}}
+				<p class='modal__text author-name'>{{name}}</p>
+				{{/if}}
+			</li>
+			<li class='modal__info-list-item'>
+          {{#if priceRanges.1.min}}
+		<h2 class='modal__title'>PRICES</h2>
+		{{else}}
+		{{#if priceRanges.0.min}}
+		<h2 class='modal__title'>PRICES</h2>
+		{{else}}
+		{{/if}}
+		{{/if}}
+
+				<ul class='modal__prices-list'>
+					<li class='modal__prices-list-item'>
+						<div class='modal__prices-list-box'>
+							
+							{{#if priceRanges.1.min}}
+							<svg class="modal__price-icon" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M3.22222 0.833496L0 0.833496L0 20.1668H3.22222L3.22222 0.833496Z" fill="#0E0E0E" />
+								<path d="M11.3266 0.833496L8.10439 0.833496L8.10439 20.1668H11.3266L11.3266 0.833496Z" fill="#0E0E0E" />
+								<path d="M16.2088 0.833496L12.9866 0.833496L12.9866 20.1668H16.2088L16.2088 0.833496Z" fill="#0E0E0E" />
+								<path d="M28.9999 0.833496L24.2154 0.833496L24.2154 20.1668H28.9999L28.9999 0.833496Z" fill="#0E0E0E" />
+								<path d="M6.44449 0.833496L4.88219 0.833496L4.88219 20.1668H6.44449L6.44449 0.833496Z" fill="#0E0E0E" />
+								<path d="M19.3333 0.833496L17.771 0.833496L17.771 20.1668H19.3333L19.3333 0.833496Z" fill="#0E0E0E" />
+								<path d="M22.5555 0.833496L20.9932 0.833496L20.9932 20.1668H22.5555L22.5555 0.833496Z" fill="#0E0E0E" />
+							</svg>
+							<p class='modal__text modal__text--prices-list'>Standart
+								{{priceRanges.1.min}}-{{priceRanges.1.max}}
+								{{priceRanges.1.currency}}</p>
+							{{else}}
+							
+							{{/if}}
+						</div>
+						{{#if priceRanges.1.min}}
+						<a class='modal__prices-list-link' href={{url}} target='_blank' rel='noopener noreferrer'>BUY
+							TICKETS</a>
+							{{else}}
+							{{/if}}
+					</li>
+					<li class='modal__prices-list-item'>
+						<div class='modal__prices-list-box'>
+							
+							{{#if priceRanges.0.min}}
+							<svg class="modal__price-icon" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M3.22222 0.833496L0 0.833496L0 20.1668H3.22222L3.22222 0.833496Z" fill="#0E0E0E" />
+								<path d="M11.3266 0.833496L8.10439 0.833496L8.10439 20.1668H11.3266L11.3266 0.833496Z" fill="#0E0E0E" />
+								<path d="M16.2088 0.833496L12.9866 0.833496L12.9866 20.1668H16.2088L16.2088 0.833496Z" fill="#0E0E0E" />
+								<path d="M28.9999 0.833496L24.2154 0.833496L24.2154 20.1668H28.9999L28.9999 0.833496Z" fill="#0E0E0E" />
+								<path d="M6.44449 0.833496L4.88219 0.833496L4.88219 20.1668H6.44449L6.44449 0.833496Z" fill="#0E0E0E" />
+								<path d="M19.3333 0.833496L17.771 0.833496L17.771 20.1668H19.3333L19.3333 0.833496Z" fill="#0E0E0E" />
+								<path d="M22.5555 0.833496L20.9932 0.833496L20.9932 20.1668H22.5555L22.5555 0.833496Z" fill="#0E0E0E" />
+							</svg>
+							<p class='modal__text modal__text--prices-list'>VIP
+								{{priceRanges.0.min}}-{{priceRanges.0.max}}
+								{{priceRanges.0.currency}}</p>
+							{{else}}
+							
+							{{/if}}
+						</div>
+						{{#if priceRanges.0.min}}
+						<a class='modal__prices-list-link' href={{url}} target='_blank' rel='noopener noreferrer'>BUY
+							TICKETS</a>
+							{{else}}
+							
+							{{/if}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<button type='button' id='modal__more-button' class='modal__more-button'>MORE FROM THIS AUTHOR</button>
+

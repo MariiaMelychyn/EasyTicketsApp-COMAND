@@ -1,0 +1,16 @@
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
+
+// Стили для файла с примером HTML-фрагмента
+@import './base';
+@import './utils/variables';
+@import './header';
+@import './gallery';
+@import './modal';
+@import './pagination';
+@import './footer';
+@import './btnUp';
+@import './team-modal';
+@import './preloader';
